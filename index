@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Omkar Thorbole Blogs</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #34e89e, #a00a8b, #ff9a8b, #0f3443, #ff6a88, #d97d0c);
+            background-size: 600% 600%;
+            animation: gradientAnimation 15s ease infinite;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            text-align: center;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
+        }
+        .content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .title {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .blog-link {
+            font-size: 1.2em;
+            color: #fff;
+            background-color: #ff7e5f;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+        .blog-link:hover {
+            background-color: #feb47b;
+        }
+        footer {
+            font-size: 0.9em;
+            padding: 10px 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="container">
+            <h1 class="title">Welcome to Omkar Thorbole Blogs</h1>
+            <p class="subtitle">Inspiration and Insights for DevOps Engineers</p>
+            <a class="blog-link" href="https://devopswithomkar.hashnode.dev/" target="_blank">Visit My Blog</a>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Omkar Thorbole. All rights reserved.
+    </footer>
+</body>
+</html>
