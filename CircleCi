@@ -1,0 +1,42 @@
+version: 2.1
+
+# Define jobs
+jobs:
+  build:
+    docker:
+      - image: circleci/node:14  # Use Node.js Docker image
+    steps:
+      - checkout  # Check out the code from your repository
+      - run:
+          name: Install dependencies
+          command: npm install
+      - run:
+          name: Run tests
+          command: npm test
+      - run:
+          name: Build the application
+          command: npm run build
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build
+
+  deploy:
+    docker:
+      - image: circleci/node:14
+    steps:
+      - attach_workspace:
+          at: /workspace
+      - run:
+          name: Deploy to production
+          command: echo "Deploying the application..."  # Replace with actual deploy command
+
+# Define workflows
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build  # Deploy only after the build job succeeds
